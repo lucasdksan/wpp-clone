@@ -1,42 +1,130 @@
-.App {
-  text-align: center;
+:root {
+    /* Colors */
+    --bg-transparent: transparent;
+    --bg-gray: #d2dbdc;
+    --bg-gray-100: #ededed;
+    --bg-gray-150: #eee;
+    --bg-gray-200: #ddd;
+
+    --bg-white: #ffffff;
+    --bg-white-100: #f6f6f6;
+
+
+    /* Fonts */
+    --main-font: 'Segoe UI', Helvetica Neue, Helvetica, Lucida Grande, Arial;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-color: var(--bg-gray);
+    margin: 0;
+    font-family: var(--main-font);
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+    text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+ul, 
+li,
+ol {
+    list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+fieldset {
+    border: none;
 }
 
 button {
-  font-size: calc(10px + 2vmin);
+    outline: none;
+    border: none;
+}
+
+.app-window {
+    display: flex;
+    height: 100vh;
+    background-color: var(--bg-gray-100);
+}
+
+.sidebar {
+    width: 35%;
+    max-width: 415px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--bg-gray-200);
+}
+
+header {
+    height: 60px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header--avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.header--buttons {
+    display: flex;
+}
+
+.header--btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search {
+    background-color: var(--bg-white-100);
+    border-bottom: 1px solid var(--bg-gray-150);
+    padding: 5px 15px;
+}
+
+.search--input {
+    background-color: var(--bg-white);
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search--input input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: var(--bg-transparent);
+    margin-left: 10px;
+}
+
+.chat-list {
+    flex: 1;
+    background-color: var(--bg-white);
+    overflow: auto;
+}
+
+.chat-list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.content-area {
+    flex: 1;
 }
